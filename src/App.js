@@ -6,11 +6,11 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Routes,
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');  // whether dark mode is enabled or not.
@@ -45,22 +45,23 @@ function App() {
   return (
     <>
       {/* <Navbar/> */}
-      <Router>
-        <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
-        <div className="container my-3">
-          <Routes>
+      {/* <Router> */}
+      <Navbar title="TextUtils" aboutText="About TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-3">
+        {/* <Routes>
             {/* component 1 - /users
               component 2 - /users/home
               React do partial matching so if We don't use "exact path" instead of going to /users/home it'll go to users
            */}
-            <Route exact path='/' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
-            <Route exact path='/about' element={<About />} />
-          </Routes>
+        {/* <Route exact path='/' element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+            <Route exact path='/about' element={<About />} /> */}
+        {/* </Routes> */}
+        <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
 
 
-        </div>
-      </Router>
+      </div>
+      {/* </Router> */}
 
     </>
   );
